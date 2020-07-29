@@ -1,19 +1,19 @@
 import React from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
+const userImage = require('../images/user.png');
 
-const SkilledPeople = ({ name, skill, free, description, location, contactInformation }) => (
+const SkilledPeople = ({ people }) => (
     <Card>
       <Card.Content>
         <Image
           floated='right'
           size='mini'
-          src='../images/user.png'
+          src={userImage}
         />
-        <Card.Header>{name}</Card.Header>
-        <Card.Meta>{skill}</Card.Meta>
-        <Card.Meta>{free}</Card.Meta>
+        <Card.Header>{people.name}</Card.Header>
+        <Card.Meta>{people.skill}</Card.Meta>
         <Card.Description>
-          {description}
+          {people.description}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

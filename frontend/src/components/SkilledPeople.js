@@ -4,7 +4,7 @@ import SkilledPerson from './SkilledPerson'
 
 const SkilledPeople = ({ people }) => (
   <Card.Group>
-    <SkilledPerson people={people[0]}/>
+    <SkilledPerson people={people}/>
   </Card.Group>
 )
 
