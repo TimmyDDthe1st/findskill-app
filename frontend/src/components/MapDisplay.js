@@ -1,27 +1,14 @@
 import React from 'react';
-import GoogleMapReact from 'google-maps-react';
-import LocationPin from '../components/LocationPin';
-import googleApiKey from '../fixtures/auth.json';
+import '../styles/MapDisplay.css';
 
-const Map = ({ location, zoomLevel }) => (
-    <div className="map">
-      <h2 className="map-h2">Come Visit Us At Our Campus</h2>
-  
-      <div className="google-map">
-        <GoogleMapReact
-          google={window.google}
-          bootstrapURLKeys={{ key: googleApiKey }}
-          defaultCenter={location}
-          defaultZoom={zoomLevel}
-        >
-          <LocationPin
-            lat={location.lat}
-            lng={location.lng}
-            text={location.address}
-          />
-        </GoogleMapReact>
-      </div>
-    </div>
+const mapImage = require('../images/maps.png');
+
+const MapDisplay = () => (
+    <img
+      className="map" 
+      src={mapImage}
+      alt="Person Location Map"
+    />
   )
 
-  export default Map;
+  export default MapDisplay;
