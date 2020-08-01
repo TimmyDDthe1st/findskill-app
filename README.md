@@ -2,7 +2,13 @@
 
 # Setup
 
-This is a mono repo, so to get setup to run the app locally, you'll need to npm install in the front end and the back end folder, then npm run in each.
+This is the front end for the find skill project. You can find the backend here...
+
+https://github.com/aveiszhab/find-skill.api/tree/master
+
+once you've cloned this repo run...
+
+```npm install && npm start```
 
 # Available Scripts
 
