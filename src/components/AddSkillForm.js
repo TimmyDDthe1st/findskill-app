@@ -6,11 +6,13 @@ import { Input,
          Form,
          TextArea,
 } from 'semantic-ui-react';
+import postUser from '../requests/postUser';
 
 const AddSkillForm = () => {
   const [nameText, setNameText] = useState('');
   const [skillText, setSkillText] = useState('');
   const [postcodeText, setPostcodeText] = useState('');
+  const [descriptionText, setDescriptionText] = useState('');
   const [emailText, setEmailText] = useState('');
   const [freeBool, setFreeBool] = useState(false);
   const [professionalBool, setProfessionalBool] = useState(false);
@@ -36,6 +38,10 @@ const AddSkillForm = () => {
     setPostcodeText(uppcasedInput);
   }
 
+  const handleDescriptionInput = (e) => {
+    setDescriptionText(e.target.value);
+  }
+
   const handleEmailInput = (e) => {   
     const userInput = e.target.value;
 
@@ -51,9 +57,9 @@ const AddSkillForm = () => {
   }
 
   const handleFormSubmit = () => {
-    const requestParams = [nameText, skillText, postcodeText, emailText, freeBool, professionalBool];
+    const requestParams = [nameText, skillText, postcodeText, descriptionText, freeBool, professionalBool, emailText];
 
-    console.log(requestParams);
+    postUser(requestParams);
   }
 
   return <Form>
@@ -79,6 +85,7 @@ const AddSkillForm = () => {
       <TextArea 
         placeholder="Description..."
         name="description"
+        onChange={handleDescriptionInput}
       />
     </Form.Field>
     <Form.Field>
