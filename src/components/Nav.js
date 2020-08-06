@@ -57,7 +57,6 @@ function Find() {
     <div>
       <h2>Find Skill</h2>
       <MapDisplay />
-      <SkilledPeople people={users}/>
     </div>
   );
 }
