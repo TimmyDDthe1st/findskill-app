@@ -1,18 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import { Card } from 'semantic-ui-react';
+import React from 'react';
 import SkilledPerson from './SkilledPerson';
-import getUsers from '../requests/getusers';
 
-const SkilledPeople = () => {
-  const [users, setUsers] = useState();
-
-  useEffect(() => {
-    setUsers(getUsers());
-  }, [])
-
-  return <Card.Group>
-    <SkilledPerson people={console.log(users)}/>
-  </Card.Group>
+const SkilledPeople = (users) => {
+  return (
+    <>
+      <div className="skilledPersonCard">
+        {users.map((user) => (
+            <SkilledPerson people={user}/>
+          ))}
+      </div>
+    </>
+  );
 }
 
 export default SkilledPeople

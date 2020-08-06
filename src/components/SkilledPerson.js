@@ -10,7 +10,7 @@ const SkilledPeople = ({ people }) => (
           size='mini'
           src={userImage}
         />
-        <Card.Header>{console.log(people)}</Card.Header>
+        <Card.Header>{people}</Card.Header>
         <Card.Meta>{}</Card.Meta>
         <Card.Description>
           {}

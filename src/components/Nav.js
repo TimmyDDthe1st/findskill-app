@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,6 +9,7 @@ import {
 import SkilledPeople from './SkilledPeople';
 import MapDisplay from './MapDisplay';
 import { people}  from '../fixtures/peopleData.json';
+import getUsers from '../requests/getusers';
 
 import AddSkillForm from './AddSkillForm';
 
@@ -40,11 +41,23 @@ export default function Nav() {
 }
 
 function Find() {
+  const [users, setUsers] = useState();
+
+  useEffect(() => {
+      const getData = async () => {
+      setUsers(await getUsers());
+    } 
+
+    getData();
+  }, []);
+
+  {console.log(users)} //start here
+
   return (
     <div>
       <h2>Find Skill</h2>
       <MapDisplay />
-      <SkilledPeople people={people[0]}/>
+      <SkilledPeople people={users}/>
     </div>
   );
 }
