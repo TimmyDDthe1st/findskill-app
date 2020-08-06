@@ -10,10 +10,10 @@ const SkilledPeople = ({ people }) => (
           size='mini'
           src={userImage}
         />
-        <Card.Header>{people.name}</Card.Header>
-        <Card.Meta>{people.skill}</Card.Meta>
+        <Card.Header>{people}</Card.Header>
+        <Card.Meta>{}</Card.Meta>
         <Card.Description>
-          {people.description}
+          {}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

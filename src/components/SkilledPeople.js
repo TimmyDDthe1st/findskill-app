@@ -1,11 +1,16 @@
-import React from 'react'
-import { Card } from 'semantic-ui-react'
-import SkilledPerson from './SkilledPerson'
+import React from 'react';
+import SkilledPerson from './SkilledPerson';
 
-const SkilledPeople = ({ people }) => (
-  <Card.Group>
-    <SkilledPerson people={people}/>
-  </Card.Group>
-)
+const SkilledPeople = (users) => {
+  return (
+    <>
+      <div className="skilledPersonCard">
+        {users.map((user) => (
+            <SkilledPerson people={user}/>
+          ))}
+      </div>
+    </>
+  );
+}
 
 export default SkilledPeople
